@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Valid Email Checker</title>
+</head>
+
+<body>
+  <section class="navbar">
+    <img src="image/logo.png" alt="logo">
+    <h2 id="websiteName">Check Email</h2>
+  </section>
+
+  <section class="main-area">
+    <div class="heading">
+      <img src="image/email.jpg" alt="email image">
+      <h1>Email Varifier</h1>
+    </div>
+    <p>Verify valid email address format with EmailVarifier email checker.</p>
+    <script src="javascript/script.js"></script>
+  </section>
+
+  <section class="input-box">
+    <div>
+      <input type="text" value="" name="" id="userEmail" placeholder="Enter a Email address" required
+        onclick="clearMessage()">
+      <input type="button" id="button" value="Check" onclick="main()">
+    </div>
+    <p>Enter a email address to check email is valid or not</p>
+  </section>
+
+  <section class="footer">
+    <div id="result"></div>
+    <p>Website design for education purpuse only</p>
+    <p id="author">&copy; designed by Aman Raj</p>
+  </section>
+</body>
+
+</html>
