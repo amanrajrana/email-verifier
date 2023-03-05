@@ -1,5 +1,5 @@
 
-# Update Project Name
+# Email Verifier
 This is my first Project. In this project, an email input from the user is validated to ensure that it is in a valid format.
 
 If a valid email format is entered, the output will be `You have entered a valid email address`
