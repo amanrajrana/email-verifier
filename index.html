@@ -5,16 +5,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
   <link rel="stylesheet" href="css/style.css">
   <title>Valid Email Checker</title>
 </head>
 
 <body>
-  <section class="navbar">
+  <!-- NAVBAR  -->
+  <nav class="navbar">
     <img src="image/logo.png" alt="logo">
-    <h2 id="websiteName">Check Email</h2>
-  </section>
+    <h2 id="websiteName"><a href="/">Check Email</a></h2>
+  </nav>
 
+  <!-- UPPER SECTION  -->
   <section class="main-area">
     <div class="heading">
       <img src="image/email.jpg" alt="email image">
@@ -24,6 +27,7 @@
     <script src="javascript/script.js"></script>
   </section>
 
+  <!-- USER INPUT AREA  -->
   <section class="input-box">
     <div>
       <input type="text" value="" name="" id="userEmail" placeholder="Enter a Email address" required
@@ -33,11 +37,13 @@
     <p>Enter a email address to check email is valid or not</p>
   </section>
 
-  <section class="footer">
+  <!-- FOOTER  -->
+  <footer class="footer">
     <div id="result"></div>
     <p>Website design for education purpuse only</p>
     <p id="author">&copy; designed by Aman Raj</p>
-  </section>
+    <p id="github-link">Check souce code on github <a href="https://github.com/amanrana0/email-varifier" target="_blank">click here</a></p>
+  </footer>
 </body>
 
 </html>
