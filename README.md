@@ -1,14 +1,18 @@
 
-<<<<<<< HEAD
 # Email verifier  
-=======
-# Email Verifier
->>>>>>> 2eccc5203994dfc14b41303237ed587cf7557d9a
 This is my first Project. In this project, an email input from the user is validated to ensure that it is in a valid format.
 
 If a valid email format is entered, the output will be `You have entered a valid email address`
 
 if the user inputs an invalid email format the output display an error.
+
+---
+## How to use
+
+1. Open the Coder Calculator web app in your browser. [https://amanrajrana.github.io/email-verifier/](https://amanrajrana.github.io/email-verifier/)
+2. Enter your Email
+
+---
 
 
 ### Note:
@@ -16,13 +20,20 @@ if the user inputs an invalid email format the output display an error.
 
 2. The output of this project only checks for valid email formats. It does not guarantee that the email will exit.
 
+## Technologies used
+- **HTML5**
+- **CSS**
+- **JavaScript** 
+
+
+
 
 ## Screenshots
 **Desktop Preview**
 ![App Screenshot](image/Screenshot/Screenshot-1.png)
 
 **Mobile Preview**
-![App Screenshot](image/Screenshot/Screenshot-2.png)
+<img src="image/Screenshot/Screenshot-2.png" height="300" alt="desktop-view">
 
 
 ## 🛠 language
