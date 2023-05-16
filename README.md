@@ -1,5 +1,5 @@
 
-# Email varifier 
+# Email verifier  
 This is my first Project. In this project, an email input from the user is validated to ensure that it is in a valid format.
 
 If a valid email format is entered, the output will be `You have entered a valid email address`
@@ -28,8 +28,8 @@ Javascript, HTML, CSS...
 ## Authors
 **_Aman Raj Rana_**
 
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/arrana)
-[![github](https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/amanrana0)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/amanrajrana)
+[![github](https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/amanrajrana)
 
 ## 🚀 About Me
 I'm MERN stack developer...

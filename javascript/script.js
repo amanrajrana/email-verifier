@@ -16,11 +16,10 @@ const checkNumber = (userName) => {
 //get value from document
 const checkValidEmail = () => {
     let email = document.getElementById('userEmail').value;
-    let a = prompt("hello this function called succesfully");
     return email;
 }
 
-//main fucntion
+//main function
 const main = () => {
     let email = document.getElementById('userEmail').value;
     email = email.trim();
