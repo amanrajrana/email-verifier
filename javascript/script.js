@@ -1,103 +1,112 @@
-// check @ preset in enter email or not 
+/**
+ * 
+ * @param email - a string i.e email
+ * @returns true or false on basis of that string includes '@' or not
+ */
 const checkAtTheRate = (email) => {
     return email.includes("@");
 }
 
-// check email start with a character 
-const checkLetter = (userName) => {
-    return /[a-zA-Z]/.test(userName)
+
+/**
+ * @param str - a string.
+ * 
+ * The function checks if a given string is a valid email address based on certain rules.
+ * rules
+ * 1. string can start and with alphaNumeric (as variable alphaNumericRegex)
+ * 2. rest string only can contain alphaNumeric or three special char (- . _) [as variable alphaNumericSpecialRegex]
+ * 
+ * @returns an object with two key isValid an message based on certain rules
+ */
+
+function validSyntax(str) {
+
+    const alphaNumericRegex = /^[A-Za-z0-9]+$/;
+    const alphaNumericSpecialRegex = /^[A-Za-z0-9-._]+$/;
+
+    // string must be start with alphaNumeric latter
+    if (!alphaNumericRegex.test(str.charAt(0))) {
+        return {
+            isValid: false,
+            message: `Domain Name can not start with ${str.charAt(0)}`
+        }
+    }
+
+    // string must be end with alphaNumeric latter
+    if (!alphaNumericRegex.test(str.charAt(str.length - 1))) {
+        return {
+            isValid: false,
+            message: `Domain Name can not end with "${str.charAt(str.length - 1)}"`
+        }
+    }
+
+
+    // rest latter on can be alphaNumeric and three special char (-_.)
+    if (alphaNumericSpecialRegex.test(str)) {
+        return {
+            isValid: true,
+        }
+    }
+
+    // default return
+    return {
+        isValid: false,
+        message: "Not a valid email"
+    }
 }
 
-//check Number function
-const checkNumber = (userName) => {
-    return /[0-9]/.test(userName);
-}
-
-//get value from document
-const checkValidEmail = () => {
-    let email = document.getElementById('userEmail').value;
-    return email;
-}
-
-//main function
-const main = () => {
-    let email = document.getElementById('userEmail').value;
+const checkValidEmail = (email) => {
     email = email.trim();
     let flag = false;
 
-    if (checkAtTheRate(email) == false) {
-        result = "Please enter a valid email example@email.com";
+    // Check Email must include @
+    if (!checkAtTheRate(email)) {
+        return {
+            isValid: false,
+            message: `Email must contain '@'`
+        }
+    }
+
+    const indexOfAt = email.indexOf("@");
+    const userName = email.slice(0, indexOfAt);  // slice username
+    const serverName = email.slice((indexOfAt + 1)); // slice domain
+
+    // if userName and serverName with function validSyntax() if it return two value {isValid: , message} it mean userName is in valid syntax
+
+    const validUserNameSyntax = validSyntax(userName);
+    const validDomainNameSyntax = validSyntax(serverName);
+
+    if (!validUserNameSyntax.isValid) {
+        return validUserNameSyntax
+    }
+
+    if (!(validDomainNameSyntax.isValid)) {
+        return validDomainNameSyntax;
+    }
+
+    return {
+        isValid: true,
+        message: 'Enter Email is valid an email'
+    }
+}
+
+
+function main () {
+    const email = document.getElementById('userEmail').value;
+    const resultElement = document.getElementById('result')
+
+    const isValidEmail = checkValidEmail(email);
+
+    if(isValidEmail.isValid) {
+        resultElement.style.color = 'green';
+        resultElement.innerHTML = isValidEmail.message;
     }
     else {
-        let indexOfAt = email.indexOf("@");
-        let userName = email.slice(0, indexOfAt);
-        let serverName = email.slice((indexOfAt + 1));
-
-        if (checkLetter(email[0]) == false) {
-            document.getElementById('result').innerHTML = "Email can only start with Letters (i.e a-z)";
-        }
-        else {
-
-            for (let i in userName) {
-                if (checkLetter(userName[i])) {
-                    flag = true;
-                }
-                else if (checkNumber(userName[i])) {
-                    flag = true;
-                }
-                else if (userName[i] == "-" || userName[i] == ".") {
-                    flag = true;
-                }
-                else {
-                    flag = false;
-                    document.getElementById('result').innerHTML = "please enter a valid email " + userName[i] + " is not allowed in email address";
-                    break;
-                }
-            }
-        }
-        if (flag == false) {
-            result = "You enter invalid address";
-        }
-        else {
-            if (serverName.includes(".") == false) {
-                result = "Your server name " + serverName + " is not valid";
-                flag = false;
-            }
-            else {
-                if (serverName.indexOf(".") == "0") {
-                    document.getElementById('result').innerHTML = "you server domain is not valid";
-                    flag = false;
-                }
-                else {
-
-                    for (let i in serverName) {
-                        if (checkLetter(serverName[i]) == true) {
-                            flag = true;
-                        }
-                        else if (checkNumber(serverName[i]) == true) {
-                            flag = true;
-                        }
-                        else if (serverName[i] == "." || serverName[i] == "-") {
-                            flag = true;
-                        }
-                        else {
-                            flag = false;
-                            document.getElementById('result').innerHTML = "please enter a valid server name " + serverName[i] + " is not allowed in email server address";
-                            break;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    if (flag == true) {
-        document.getElementById('result').innerHTML = "You have entered valid email";
-
+        resultElement.style.color = 'rgba(192, 0, 0, 0.8)';
+        resultElement.innerHTML = isValidEmail.message;
     }
 }
 
 const clearMessage = () => {
     document.getElementById('result').innerHTML = "";
 }
-
