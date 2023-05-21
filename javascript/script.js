@@ -86,7 +86,7 @@ const checkValidEmail = (email) => {
 
     return {
         isValid: true,
-        message: 'Enter Email is valid an email'
+        message: 'Valid E-mail address'
     }
 }
 
