@@ -28,7 +28,7 @@ function validSyntax(str) {
     if (!alphaNumericRegex.test(str.charAt(0))) {
         return {
             isValid: false,
-            message: `Domain Name can not start with ${str.charAt(0)}`
+            message: `User Name can not start with "${str.charAt(0)}"`
         }
     }
 
