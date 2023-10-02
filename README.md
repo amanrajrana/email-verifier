@@ -1,4 +1,3 @@
-
 # Email verifier  
 This is my first Project. In this project, an email input from the user is validated to ensure that it is in a valid format.
 
